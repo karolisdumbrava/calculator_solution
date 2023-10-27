@@ -59,3 +59,9 @@ Send a POST request with a JSON body containing your parameters:
   "price_per_liter": 1.6
 }
 ```
+
+to endpoint: 
+
+```bash
+/fuel-calculator-api?_format=json
+```
