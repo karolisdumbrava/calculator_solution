@@ -16,7 +16,7 @@ Welcome to the Fuel Calculator module for Drupal! This module offers a simple an
 2. Once installed, the Fuel Calculator can be accessed at:
 ```bash
 [your-site.url]/fuel-calculator
-
+```
 ## Configuration
 
 ### Setting Default Values
@@ -24,7 +24,7 @@ Welcome to the Fuel Calculator module for Drupal! This module offers a simple an
 1. Navigate to the configuration page at:
 ```bash
 /admin/config/system/fuel-calculator
-
+```
 2. Here, you can set the default values for 'distance', 'consumption', and 'price_per_liter' that the calculator will use in the absence of user input or URL parameters.
 
 ### Utilizing URL Parameters
@@ -32,7 +32,7 @@ Welcome to the Fuel Calculator module for Drupal! This module offers a simple an
 You can pre-populate the calculator's fields by providing the values in the URL as follows:
 ```bash
 [your-site.url]/fuel-calculator?distance=300&consumption=10&price_per_liter=1.5
-
+```
 This feature is particularly useful for bookmarks, hyperlinks, or sharing specific calculation parameters.
 
 ## REST API Usage
@@ -40,14 +40,14 @@ This feature is particularly useful for bookmarks, hyperlinks, or sharing specif
 The module comes with REST API support, permitting other services to calculate fuel costs remotely. For easier REST configuration, we recommend installing the REST UI module:
 ```bash
 composer require 'drupal/restui:^1.21'
-
+```
 
 ### Authentication
 
 For secure interaction, our API requires a valid X-CSRF-Token, retrievable via:
 ```bash
 [your-site.url]/session/token
-
+```
 
 ### Submitting a Calculation
 
@@ -58,4 +58,4 @@ Send a POST request with a JSON body containing your parameters:
   "consumption": 10,
   "price_per_liter": 1.6
 }
-
+```
