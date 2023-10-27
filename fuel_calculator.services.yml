@@ -1,0 +1,12 @@
+services:
+  fuel_calculator.fuel_calculator_service:
+    class: Drupal\fuel_calculator\FuelCalculatorService
+  fuel_calculator.logger.channel:
+    class: Drupal\Core\Logger\LoggerChannel
+    factory: logger.factory:get
+    arguments: ['fuel_calculator']
+  fuel_calculator.rest_resource:
+    class: Drupal\fuel_calculator\Plugin\rest\resource\FuelCalculatorResource
+    arguments: ['@fuel_calculator.fuel_calculator_service', '@logger.factory']
+    tags:
+      - { name: 'rest_resource' }

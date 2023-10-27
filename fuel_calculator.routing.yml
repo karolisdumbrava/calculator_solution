@@ -1,0 +1,14 @@
+fuel_calculator.form:
+  path: '/fuel-calculator'
+  defaults:
+    _title: 'Fuel Calculator'
+    _form: '\Drupal\fuel_calculator\Form\FuelCalculatorForm'
+  requirements:
+    _permission: 'access content'
+fuel_calculator.admin_settings:
+  path: '/admin/config/system/fuel-calculator'
+  defaults:
+    _title: 'Fuel Calculator settings'
+    _form: '\Drupal\fuel_calculator\Form\FuelCalculatorSettingsForm'
+  requirements:
+    _permission: 'administer site configuration'

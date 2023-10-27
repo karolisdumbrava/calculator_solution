@@ -1,0 +1,6 @@
+fuel_calculator.admin_settings:
+  title: 'Fuel Calculator settings'
+  description: 'Configure Fuel Calculator settings.'
+  parent: system.admin_config_system
+  route_name: fuel_calculator.admin_settings
+  weight: 0

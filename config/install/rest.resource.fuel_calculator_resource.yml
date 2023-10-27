@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - fuel_calculator
+id: fuel_calculator_resource
+plugin_id: 'fuel_calculator_resource'
+granularity: resource
+configuration:
+  methods:
+    - POST
+  formats:
+    - json
+  authentication:
+    - cookie

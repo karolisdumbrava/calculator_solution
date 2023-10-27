@@ -1,0 +1,4 @@
+'access fuel calculator resource':
+  title: 'Access Fuel Calculator Resource'
+  description: 'Allow access to the Fuel Calculator REST Resource'
+  restrict access: FALSE  # or TRUE for more sensitive permissions
