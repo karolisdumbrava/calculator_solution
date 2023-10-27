@@ -119,11 +119,18 @@ class FuelCalculatorResource extends ResourceBase {
          }
       }
 
-      $results = $this->fuelCalculatorService->calculateFuelCost(
-         $data['distance'],
-         $data['consumption'],
-         $data['price_per_liter']
-      );
+      // Calculate the fuel cost.
+      try {
+         $results = $this->fuelCalculatorService->calculateFuelCost(
+            $data['distance'],
+            $data['consumption'],
+            $data['price_per_liter']
+         );
+      } catch (\InvalidArgumentException $e) {
+         return new ResourceResponse([
+            'error' => $e->getMessage()
+         ], 400);
+      }
 
       // Logging
       $ip = $request->getClientIp();

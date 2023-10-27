@@ -14,10 +14,8 @@ use Drupal\Core\Block\BlockBase;
  * )
  */
 class FuelCalculatorBlock extends BlockBase {
-    public function build() {
-        $form = \Drupal::formBuilder()->getForm('Drupal\fuel_calculator\Form\FuelCalculatorForm');
-      
-        return $form;
-      }
-      
+  public function build() {
+    $form = \Drupal::formBuilder()->getForm('Drupal\fuel_calculator\Form\FuelCalculatorForm');
+    return $form;
+  }
 }
