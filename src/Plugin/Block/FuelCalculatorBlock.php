@@ -13,9 +13,10 @@ use Drupal\Core\Block\BlockBase;
  *   category = @Translation("Custom"),
  * )
  */
-class FuelCalculatorBlock extends BlockBase {
-  public function build() {
-    $form = \Drupal::formBuilder()->getForm('Drupal\fuel_calculator\Form\FuelCalculatorForm');
-    return $form;
+class FuelCalculatorBlock extends BlockBase
+{
+  public function build(): array
+  {
+    return \Drupal::formBuilder()->getForm('Drupal\fuel_calculator\Form\FuelCalculatorForm');
   }
 }
