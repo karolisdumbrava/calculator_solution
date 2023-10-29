@@ -38,6 +38,7 @@ class FuelCalculatorSettingsForm extends ConfigFormBase
       '#type' => 'number',
       '#title' => $this->t('Default distance'),
       '#default_value' => $config->get('default_distance'),
+      '#required' => TRUE,
     ];
 
     $form['default_consumption'] = [
@@ -45,6 +46,7 @@ class FuelCalculatorSettingsForm extends ConfigFormBase
       '#title' => $this->t('Default consumption'),
       '#default_value' => $config->get('default_consumption'),
       '#step' => 0.1,
+      '#required' => TRUE,
     ];
 
     $form['default_price_per_liter'] = [
@@ -52,6 +54,7 @@ class FuelCalculatorSettingsForm extends ConfigFormBase
       '#title' => $this->t('Default price per liter'),
       '#default_value' => $config->get('default_price_per_liter'),
       '#step' => 0.01,
+      '#required' => TRUE,
     ];
 
     return parent::buildForm($form, $form_state);
@@ -61,7 +64,7 @@ class FuelCalculatorSettingsForm extends ConfigFormBase
    * {@inheritdoc}
    */
 
-  public function submitForm(array &$form, FormStateInterface $form_state)
+  public function submitForm(array &$form, FormStateInterface $form_state): void
   {
     $this->config('fuel_calculator.settings')
       ->set('default_distance', $form_state->getValue('default_distance'))
